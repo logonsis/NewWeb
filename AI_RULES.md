@@ -27,3 +27,22 @@ This document outlines the technical stack and specific library usage guidelines
 *   **shadcn/ui:** Leverage these pre-built, accessible components for common UI elements (e.g., buttons, forms, dialogs). **Do not modify the original `shadcn/ui` component files.** If customization is needed, create a new component that wraps or extends the `shadcn/ui` component.
 *   **Radix UI:** This library provides the unstyled, accessible primitives that `shadcn/ui` is built upon. While `shadcn/ui` is preferred for styled components, Radix UI can be used directly for more advanced, custom accessible components if `shadcn/ui` doesn't offer a suitable option.
 *   **lucide-react:** Use this library for all icons throughout the application.
+
+## General Development Guidelines
+
+*   **Component Creation:**
+    *   Always create a new file for every new component or hook, no matter how small.
+    *   Never add new components to existing files, even if they seem related.
+    *   Aim for components that are 100 lines of code or less. Refactor larger files into smaller, focused components when necessary.
+*   **Code Quality:**
+    *   Ensure all code is complete, syntactically correct, and adheres to the existing coding style and conventions.
+    *   Prioritize maintainability and readability.
+*   **Responsiveness:** All designs must be responsive and adapt well to different screen sizes.
+*   **Error Handling:** Use toast components for user feedback on important events. Avoid `try/catch` blocks unless specifically requested, allowing errors to bubble up for better debugging.
+*   **Scope:**
+    *   Focus on implementing only what is directly requested by the user.
+    *   Avoid over-engineering; keep solutions simple and elegant.
+    *   Ensure all implemented features are fully functional with complete code, without placeholders or partial implementations.
+*   **File Naming & Structure:**
+    *   Directory names MUST be all lower-case (e.g., `src/pages`, `src/components`).
+    *   File names may use mixed-case (e.g., `UserProfile.tsx`, `Button.tsx`).
