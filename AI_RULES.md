@@ -27,21 +27,3 @@ This document outlines the technical stack and specific library usage guidelines
 *   **shadcn/ui:** Leverage these pre-built, accessible components for common UI elements (e.g., buttons, forms, dialogs). **Do not modify the original `shadcn/ui` component files.** If customization is needed, create a new component that wraps or extends the `shadcn/ui` component.
 *   **Radix UI:** This library provides the unstyled, accessible primitives that `shadcn/ui` is built upon. While `shadcn/ui` is preferred for styled components, Radix UI can be used directly for more advanced, custom accessible components if `shadcn/ui` doesn't offer a suitable option.
 *   **lucide-react:** Use this library for all icons throughout the application.
-
-## Coding Standards and Best Practices
-
-*   **File Naming:**
-    *   React components should use `PascalCase` (e.g., `UserProfile.tsx`).
-    *   Utility files, hooks, and other non-component files should use `kebab-case` (e.g., `use-auth.ts`, `api-client.ts`).
-    *   Directory names must be all lower-case (e.g., `src/pages`, `src/components`).
-*   **Component Design:**
-    *   Aim for small, focused components with a single responsibility.
-    *   Create a new file for every new component or hook, no matter how small. Avoid adding new components to existing files.
-    *   Components should generally be 100 lines of code or less. Refactor larger components into smaller, more manageable pieces.
-*   **Responsiveness:** All UI designs must be inherently responsive, adapting gracefully to various screen sizes using Tailwind CSS utilities.
-*   **Error Handling:** Utilize toast notifications for user-facing feedback on important events (success, error, loading). Avoid `try/catch` blocks unless explicitly requested, allowing errors to propagate for centralized debugging.
-*   **Code Readability and Maintainability:**
-    *   Write clear, concise, and self-documenting code.
-    *   Follow consistent formatting and linting rules.
-    *   Prioritize simplicity and elegance over overly complex solutions.
-*   **Completeness:** All implemented features must be fully functional with complete code. Avoid placeholders, partial implementations, or `TODO` comments for features that are part of a user request.
